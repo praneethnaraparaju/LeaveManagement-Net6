@@ -1,14 +1,13 @@
-using LeaveManagementWeb.Configurations;
 using LeaveManagementWeb.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
+using LeaveManagementWeb.Configurations;
 using LeaveManagementWeb.Contracts;
 using LeaveManagementWeb.Repository;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using LeaveManagementWeb;
 using LeaveManagementWeb.Services;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -25,6 +24,7 @@ builder.Services.AddTransient<IEmailSender>(s => new EmailSender("localhost", 25
 
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<ILeaveTypeRepository, LeaveTypeRepository>();
+builder.Services.AddScoped<ILeaveAllocationRepository, LeaveAllocationRepository>();
 
 builder.Services.AddAutoMapper(typeof(MapperConfig));
 

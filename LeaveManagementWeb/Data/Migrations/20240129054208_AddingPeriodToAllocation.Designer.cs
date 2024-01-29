@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeaveManagementWeb.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240126094104_AddedDefaultUsersAndRoles")]
-    partial class AddedDefaultUsersAndRoles
+    [Migration("20240129054208_AddingPeriodToAllocation")]
+    partial class AddingPeriodToAllocation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -128,6 +128,9 @@ namespace LeaveManagementWeb.Data.Migrations
                     b.Property<int>("NumberOfDays")
                         .HasColumnType("int");
 
+                    b.Property<int>("Period")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("LeaveTypeId");
@@ -191,26 +194,26 @@ namespace LeaveManagementWeb.Data.Migrations
                         new
                         {
                             Id = "cac43a6e-f7bb-4448-baaf-1add431ccbbf",
-                            ConcurrencyStamp = "ed784931-794a-49ff-8d56-bd629e5fbe37",
+                            ConcurrencyStamp = "52de123e-1ce9-4cb7-bdf2-05484a20ed2b",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
                             Id = "cac43a7e-f7cb-4148-baaf-1acb431eabbf",
-                            ConcurrencyStamp = "53090e81-2fc4-4a84-b2c4-a687a897c885",
+                            ConcurrencyStamp = "55e9b1ec-6a45-4db9-a067-294500b0db81",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = "408aa945-3d84-4421-8342-7269ec64d949",
-                            ConcurrencyStamp = "c2a9ada4-f44a-42a1-bb33-c532ee500797"
+                            ConcurrencyStamp = "ee4cae73-9d82-4349-af13-b0efdc0a64ed"
                         },
                         new
                         {
                             Id = "3f4631bd-f907-4409-b416-ba356312e659",
-                            ConcurrencyStamp = "fca3062b-c6dc-4997-84d9-9ed397feee17"
+                            ConcurrencyStamp = "c6cd4ce3-511e-4866-bfef-c62fd3905067"
                         });
                 });
 

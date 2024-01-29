@@ -4,6 +4,7 @@ using LeaveManagementWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeaveManagementWeb.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240126121308_AddedDefaultUsersAndRole")]
+    partial class AddedDefaultUsersAndRole
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -126,9 +128,6 @@ namespace LeaveManagementWeb.Data.Migrations
                     b.Property<int>("NumberOfDays")
                         .HasColumnType("int");
 
-                    b.Property<int>("Period")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("LeaveTypeId");
@@ -192,26 +191,26 @@ namespace LeaveManagementWeb.Data.Migrations
                         new
                         {
                             Id = "cac43a6e-f7bb-4448-baaf-1add431ccbbf",
-                            ConcurrencyStamp = "52de123e-1ce9-4cb7-bdf2-05484a20ed2b",
+                            ConcurrencyStamp = "d45a57a6-fd3e-4ab6-8adb-b6857195c21e",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
                             Id = "cac43a7e-f7cb-4148-baaf-1acb431eabbf",
-                            ConcurrencyStamp = "55e9b1ec-6a45-4db9-a067-294500b0db81",
+                            ConcurrencyStamp = "756715b2-a3a2-42e9-a3ed-4445ea9ea2f5",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = "408aa945-3d84-4421-8342-7269ec64d949",
-                            ConcurrencyStamp = "ee4cae73-9d82-4349-af13-b0efdc0a64ed"
+                            ConcurrencyStamp = "d57447e4-83d8-4e41-a27c-de70961889b7"
                         },
                         new
                         {
                             Id = "3f4631bd-f907-4409-b416-ba356312e659",
-                            ConcurrencyStamp = "c6cd4ce3-511e-4866-bfef-c62fd3905067"
+                            ConcurrencyStamp = "2301e920-481e-435a-acb7-879592cd549f"
                         });
                 });
 

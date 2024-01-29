@@ -22,7 +22,7 @@ namespace LeaveManagementWeb.Configurations.Entities
                     Name = Roles.User,
                     NormalizedName = Roles.User.ToUpper()
                 }
-                );
+             );
         }
     }
 }
